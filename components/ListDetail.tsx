@@ -1,3 +1,4 @@
+import { Box, Typography } from "@mui/material"
 import { User } from "../interfaces"
 
 type ListDetailProps = {
@@ -5,10 +6,10 @@ type ListDetailProps = {
 }
 
 const ListDetails = ({ item: user }: ListDetailProps) => (
-  <div>
-    <h1>Detail for {user.name}</h1>
-    <p>ID: {user.id}</p>
-  </div>
+  <Box>
+    <Typography variant="h1" component="h1">Добро пожаловать, {user.name}!</Typography>
+    <Typography>ID: {user.id}</Typography>
+  </Box>
 )
 
 export default ListDetails

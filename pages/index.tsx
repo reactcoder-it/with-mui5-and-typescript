@@ -1,18 +1,19 @@
-import type { NextPage } from 'next'
-import Link from 'next/link'
+import { Link, Typography } from '@mui/material'
+import { NextPage } from 'next'
+import NextLink from 'next/link'
 import Layout from '../components/Layout'
 
-const Home: NextPage = () => {
+const HomePage: NextPage = () => {
   return (
     <Layout title="Главная | Next.js + TypeScript Example">
-      <h1>Привет, Next.js 👋</h1>
-      <p>
-        <Link href="/about">
-          <a>О нас</a>
-        </Link>
-      </p>
+      <Typography component="h1" variant='h1'>Привет, Next.js 👋</Typography>
+      <Typography>
+        <NextLink href="/about" passHref>
+          <Link>О нас</Link>
+        </NextLink>
+      </Typography>
     </Layout>
   )
 }
 
-export default Home
+export default HomePage

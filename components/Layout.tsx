@@ -1,6 +1,7 @@
 import Head from "next/head"
-import Link from "next/link"
+import NextLink from "next/link"
 import { ReactNode } from "react"
+import { Box, Link, Divider, Typography } from '@mui/material'
 
 type Props = {
   children?: ReactNode,
@@ -14,30 +15,32 @@ const Layout = ({ children, title = 'Это заголовок по умолча
       <meta charSet="utf-8" />
       <meta name="viewport" content="initial-scale=1.0, width=device-width" />
     </Head>
-    <header>
-      <nav>
-        <Link href="/">
-          <a>Главная</a>
-        </Link>
+		<Box component="header" sx={{ p: 3 }}>
+      <Box component="nav">
+        <NextLink href="/" passHref>
+          <Link>Главная</Link>
+        </NextLink>
         {' '}|{' '}
-        <Link href="/about">
-          <a>О нас</a>
-        </Link>
+        <NextLink href="/about" passHref>
+          <Link>О нас</Link>
+        </NextLink>
         {' '}|{' '}
-        <Link href="/users">
-          <a>Список юзеров</a>
-        </Link>
+        <NextLink href="/users" passHref>
+          <Link>Список юзеров</Link>
+        </NextLink>
         {' '}|{' '}
-        <Link href="/api/users">
-          <a>Users API</a>
-        </Link>
-      </nav>
-    </header>
-    {children}
-    <footer>
-      <hr />
-      <span>Футер</span>
-    </footer>
+        <NextLink href="/api/users" passHref>
+          <Link>Users API</Link>
+        </NextLink>
+      </Box>
+    </Box>
+		<Box sx={{ p: 3 }}>
+	    {children}
+		</Box>
+    <Box component="footer">
+      <Divider />
+			<Typography sx={{ p: 3 }}>PXSTUDIO</Typography>
+    </Box>
   </div>
 )
 

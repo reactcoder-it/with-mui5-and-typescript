@@ -1,4 +1,5 @@
-import Link from "next/link"
+import { Link } from "@mui/material"
+import NextLink from "next/link"
 import { User } from "../interfaces"
 
 type Props = {
@@ -6,9 +7,9 @@ type Props = {
 }
 
 const ListItem = ({ data }: Props) => (
-  <Link href="/users/[id]" as={`/users/${data.id}`}>
-    <a>{data.id}: {data.name}</a>
-  </Link>
+  <NextLink href="/users/[id]" as={`/users/${data.id}`} passHref>
+    <Link>{data.id}: {data.name}</Link>
+  </NextLink>
 )
 
 export default ListItem

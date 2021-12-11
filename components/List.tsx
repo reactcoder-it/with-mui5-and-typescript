@@ -1,3 +1,4 @@
+import { List as MuiList, ListItem as MuiListItem } from '@mui/material'
 import { User } from '../interfaces'
 import ListItem from './ListItem'
 
@@ -7,13 +8,13 @@ type Props = {
 
 const List = ({ items }: Props) => {
   return (
-    <ul>
+    <MuiList>
       {items.map(item => (
-        <li key={item.id}>
+        <MuiListItem key={item.id}>
           <ListItem data={item} />
-        </li>
+        </MuiListItem>
       ))}
-    </ul>
+    </MuiList>
   )
 }
 
